@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/CustomerLayout.cshtml";
+}
+
+<h2>Register</h2>
+<form>
+    <table>
+        <tr>
+            <td>Customer Name</td>
+            <td><input type="text" id="txtCustomerName" name="Customer Name"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" id="txtEmail" name="Email ID"></td>
+        </tr>
+        <tr>
+            <td>
+                Mobile
+            </td>
+            <td><input type="text" id="txtMobile" name="Mobile" /></td>
+        </tr>
+        <tr>
+            <td>User Name</td>
+            <td><input type="text" id="txtUserName" name="User Name" /></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text" id="txtPassword" name="Password" /></td>
+        </tr>
+        <tr>
+            <td><button type="button" class="btn btn-primary" onclick="register();">Register</button></td>
+            <td><button type="button" class="btn btn-primary" onclick="clear();">Clear</button></td>
+        </tr>
+    </table>
+
+</form>
+
+
+

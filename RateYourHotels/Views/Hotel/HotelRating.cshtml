@@ -1,0 +1,81 @@
+﻿ 
+@{
+    ViewBag.Title = "HotelRating";
+    Layout = "~/Views/Shared/HotelLayout.cshtml";
+}
+
+<h2>HotelRating</h2>
+<form>
+    <table>
+        <tr>
+            <td>
+                Select City
+            </td>
+            <td>
+                <select id="ddlSelectCity"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Select Hotel
+            </td>
+            <td>
+                <select id="ddlHotel"></select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Give your ratings
+            </td>
+            <td>
+                <select id="ddlrating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Comments
+            </td>
+            <td>
+                <textarea rows="4" cols="50" name="comment"></textarea>
+            </td>
+        </tr>
+    </table>
+</form>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+           
+
+            $.ajax({
+                type: "POST",
+                url: "/Hotel/GetHotels",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    debugger;                  
+                    $.each(data, function () {
+                        $("#ddlHotels").append($('<option></option>').val(this.HotelID).html(this.HotelName));
+                    });
+
+                }, //End of AJAX Success function
+                failure: function (data) {
+                    alert(data.responseText);
+                }, //End of AJAX failure function
+                error: function (data) {
+                    alert(data.responseText);
+                } //End of AJAX error function
+
+            });
+
+        });
+</script>
+
+
+    
+    }

@@ -29,6 +29,8 @@ namespace BussinessLayer
             {
                 var hotels = response.Content.ReadAsAsync<IEnumerable<Hotel>>().Result;
 
+
+                //forchange
                 return hotels.ToList();
             }
             else

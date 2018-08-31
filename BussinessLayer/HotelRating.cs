@@ -52,7 +52,7 @@ namespace BussinessLayer
                 if (response.IsSuccessStatusCode)
                 {
                     // Hotel hotel = await response.Content.ReadAsAsync<IEnumerable<Hotel>();
-
+                      
                 }
                 else
                 {
